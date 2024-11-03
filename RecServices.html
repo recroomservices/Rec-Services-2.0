@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Rec Services 2.0!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Main body styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            animation: bodyFadeIn 1s ease-in-out;
+            position: relative; 
+        }
+
+        @keyframes bodyFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header styles */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            animation: headerSlideIn 1s ease forwards;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes headerSlideIn {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9);
+            animation: fadeIn 2s ease;
+        }
+
+        header p {
+            font-size: 1.8em;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: slideIn 2s ease;
+        }
+
+        /* Navigation styles */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            transition: background 0.5s;
+        }
+
+        nav:hover {
+            background: rgba(0, 0, 0, 1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            position: relative;
+            transition: color 0.4s;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        nav a:hover {
+            color: #0073e6;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main content styles */
+        main {
+            padding: 60px 20px;
+            animation: mainFadeIn 1s ease forwards;
+            min-height: 100vh; 
+        }
+
+        @keyframes mainFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Features section */
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #003366, #0073e6);
+            color: white;
+            font-size: 1.8em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid white;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #0073e6, #00ff99);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Footer styles */
+        footer {
+            background: transparent;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Rainbow text styles */
+        .rainbow-text {
+            font-size: 1.5em;
+            animation: rainbow 4s infinite linear;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes rainbow {
+            0% { color: #FF0000; }
+            14% { color: #FF7F00; }
+            28% { color: #FFFF00; }
+            42% { color: #00FF00; }
+            57% { color: #00FFFF; }
+            71% { color: #0000FF; }
+            85% { color: #4B0082; }
+            100% { color: #FF0000; }
+        }
+
+        .features-heading {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .feature-text {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .shadow-text {
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Snowflake animation styles */
+        .snowflake {
+            position: absolute;
+            top: -10%;
+            pointer-events: none;
+            color: white;
+            font-size: 1em; 
+            opacity: 0.9;
+            animation: fall linear forwards, fadeOut 6s forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 0.9; }
+            90% { opacity: 0.9; }
+            100% { opacity: 0; }
+        }
+
+        /* Additional styles for enhancements */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial p {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: #00ff99;
+        }
+
+        .faq-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .faq {
+            margin: 15px 0;
+        }
+
+        .faq h3 {
+            cursor: pointer;
+            position: relative;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .faq h3:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Animations for the FAQ */
+        .faq.open .faq-content {
+            display: block;
+        }
+
+        .faq.open h3 {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* New styles for sections */
+        section {
+            margin: 40px 0;
+        }
+
+        /* Repeatedly adding sections to increase length */
+        .long-section {
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+        }
+
+        .long-section h4 {
+            font-size: 1.8em;
+            margin: 10px 0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .long-section p {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        /* Add more unique styles for diversity */
+        .unique-feature {
+            padding: 20px;
+            border: 2px solid #0073e6;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .unique-feature:hover {
+            transform: scale(1.02);
+            border-color: #00ff99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Rec Services! 2.0</h1>
+            <p>💸 Selling Tokens / Stacked Accounts at Affordable Prices! 💸</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#features" class="smooth-scroll">Information</a></li>
+                <li><a href="#faq" class="smooth-scroll">FAQs</a></li>
+                <li><a href="#join" class="smooth-scroll">Discord</a></li>
+                <li><a href="#socials" class="smooth-scroll">Socials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="features-heading">Features of Rec Services - Discord Has More Information:</h2>
+                <div class="feature">
+                    <h3><span class="feature-text">✨ Selling Rec Room Tokens - Very Affordable and Great Prices!</span></h3>
+                </div>
+                <div class="feature">
+                    <h3><span class="feature-text">✨ Selling Rec Room Accounts - Has Over 500,000 - 1,000,000 Tokens!</span></h3>
+                </div>
+                <div class="feature">
+                    <h3><span class="feature-text">✨ Selling Rec Room Items - Gifting Them Through Your Wishlist!</span></h3>
+                </div>
+                <div class="feature">
+                    <h3><span class="feature-text">🎉 Gold Hoodie and 250K+ with Cashout of $150! - BEST DEAL WE ARE HANDING OUT!</span></h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="long-section">
+            <h4>Exciting Offers</h4>
+            <p>Check out our amazing deals on Rec Room items, including exclusive bonuses, deals, and accounts!</p>
+        </section>
+
+        <section class="long-section">
+            <h4>Special Events</h4>
+            <p>Join us for our special events every month, where we offer discounts and giveaways for our loyal customers!</p>
+        </section>
+
+        <section class="long-section">
+            <h4>Community Engagement</h4>
+            <p>Become a part of our community through Discord and engage with other Rec Room enthusiasts!</p>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="faq-heading" style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">Frequently Asked Questions</h2>
+                <div class="faq">
+                    <h3 style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">What is Rec Services?</h3>
+                    <div class="faq-content">
+                        <p class="shadow-text">Rec Services provides a platform for buying and selling Rec Room Tokens, Accounts, and Items at affordable prices.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3 style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">How can I buy tokens?</h3>
+                    <div class="faq-content">
+                        <p class="shadow-text">You can buy tokens directly through our Discord server by following the instructions provided in the channels.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3 style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">Are there any discounts available?</h3>
+                    <div class="faq-content">
+                        <p class="shadow-text">Yes! We often have promotional discounts for bulk purchases, which you can find in our announcements.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3 style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">What payment methods do you accept?</h3>
+                    <div class="faq-content">
+                        <p class="shadow-text">We accept various payment methods including PayPal, Cashapp, Venmo, and other payment methods if needed.</p>
+                    </div>
+                </div>
+                <div class="faq">
+                    <h3 style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);">How can I contact support?</h3>
+                    <div class="faq-content">
+                        <p class="shadow-text">You can reach our support team through the Discord server.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="join" class="join">
+            <div class="container">
+                <h2>Join Rec Services 2.0 Now!</h2>
+                <a href="https://discord.gg/2YeURaq5As" class="button" aria-label="Join our Discord server">Join Our Discord!</a>
+            </div>
+        </section>
+
+    <footer id="socials">
+        <div class="container">
+            <div class="rainbow-text">
+                🎉 ADD US ON DISCORD 🎉 <br>
+                🡺 @whatistooken 🡸 <br>
+                🡺 @srbirdy 🡸
+            </div>
+            <p>&copy; 2024 Rec Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❆';
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.fontSize = (Math.random() * 1 + 0.5) + 'em';
+            snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.body.appendChild(snowflake);
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+            });
+        }
+        setInterval(createSnowflake, 300); // Faster snowflake creation
+
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq h3').forEach(faqTitle => {
+            faqTitle.addEventListener('click', function() {
+                const faq = this.parentElement;
+                faq.classList.toggle('open');
+            });
+        });
+    </script>
+    
+</body>
+</html>

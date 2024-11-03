@@ -1,0 +1,308 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #000000, #ffffff); /* Black to white gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background 0.3s ease-in-out;
+    animation: bodyFadeIn 1s ease-in-out;
+}
+
+@keyframes bodyFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Container for Layout Consistency */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    animation: headerSlideIn 1s ease forwards;
+}
+
+@keyframes headerSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    animation: fadeIn 2s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Added drop shadow */
+}
+
+header p {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    animation: slideIn 2s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Added drop shadow */
+}
+
+/* New Class for Highlight Text */
+.highlight-text {
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Added drop shadow */
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navigation Bar Styles */
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    animation: fadeIn 1s ease forwards;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -6px;
+    left: 50%;
+    background-color: #ffffff; /* Change to white */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 0;
+    animation: mainFadeIn 1s ease forwards;
+}
+
+@keyframes mainFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Features Section */
+.features {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Join Section */
+.join {
+    text-align: center;
+    padding: 40px 0;
+    animation: joinFadeIn 1s ease forwards;
+}
+
+@keyframes joinFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.join h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Added drop shadow */
+}
+
+.join p {
+    font-size: 1.3em;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #003366, #00509e);
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.4s, transform 0.3s, box-shadow 0.4s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #00509e, #0073e6);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease forwards;
+}
+
+footer p {
+    margin: 10px 0;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+/* Social Links */
+.socials a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4em;
+    transition: color 0.3s, transform 0.3s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+.socials a:hover {
+    color: #49a09d;
+    transform: scale(1.1);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #2e2e2e;
+    padding: 60px 0;
+    color: #e0e0e0;
+    border-top: 2px solid #49a09d;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Added drop shadow */
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    animation: testimonialFadeIn 1s ease forwards;
+}
+
+@keyframes testimonialFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added drop shadow */
+}
+
+.testimonial cite {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: #49a09d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    .join h2 {
+        font-size: 2.2em;
+    }
+
+    .button {
+        font-size: 1.2em;
+        padding: 10px 25px;
+    }
+}
+
+
